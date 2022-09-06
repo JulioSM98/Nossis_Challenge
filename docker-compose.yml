@@ -1,0 +1,28 @@
+version: '3'
+services:
+  db:
+    container_name: es-container
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.1.3
+    environment:
+      - ES_JAVA_OPTS= -Xms512m -Xmx1g
+    volumes:
+      - ./elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - ./elasticsearch/snapshots:/usr/share/elasticsearch/snapshots
+    ports:
+      - 9200:9200
+
+  api:
+    container_name: api
+    build: 
+      context: ./api
+    restart: always
+    environment:
+      - API_KEY=none
+    volumes:
+      - ./api/app:/app
+    ports:
+      - 80:80
+    depends_on:
+      - db
+    links:
+    - db:db

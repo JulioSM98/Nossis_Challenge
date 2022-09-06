@@ -1,0 +1,2 @@
+from elasticsearch import Elasticsearch
+ES = Elasticsearch(hosts=[{"host":'db',"port":9200,'scheme':'http'}],headers={"accept": "application/vnd.elasticsearch+json; compatible-with=7"}, verify_certs=False)
