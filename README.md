@@ -3,6 +3,7 @@ Challenge Nosis
 
 # Antes de Empezar
 1 - Descargar title.basics.tsv idbm dastashet de https://datasets.imdbws.com/
+
 2- descomprimir y llevar data.tsv a Nossis_Challenge\api\app\data_loader
 
 
@@ -11,4 +12,5 @@ Challenge Nosis
 
 # usar Snapshots
 1- Crear un repositorio llamado jsm
+
 2- restaurar datos
